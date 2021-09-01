@@ -39,4 +39,20 @@ public class Bird : Agent
 
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocityMagnitude);
     }
+
+    public override void Heuristic(float[] actionsOut) {
+        actionsOut[0] = 0;
+        if (!Input.GetKey(KeyCode.Space)) { return; }
+
+        actionsOut[0] = 1;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        AddReward(-1.0f);
+        EndEpisode();
+    }
+
+    private void Update() {
+        bodyTransform.rotation = Quaternion.LookRotation(rb.velocity + new Vector3(10f, 0f, 0f), transform.up);
+    }
 }
