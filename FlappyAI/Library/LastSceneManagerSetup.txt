@@ -1,5 +1,5 @@
 sceneSetups:
-- path: C:/Windows/System32/ml-agents/Project/Assets/ML-Agents/Examples/3DBall/Scenes/3DBall.unity
+- path: Assets/Scenes/SampleScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
